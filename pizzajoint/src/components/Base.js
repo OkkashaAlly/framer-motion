@@ -8,7 +8,19 @@ export const containerVariants = {
 };
 export const buttonVariants = {
   hidden: { x: "-100vw", opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 120 } },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 120 },
+  },
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    transition: {
+      yoyo: Infinity, //10 (x keyframe)
+    },
+  },
 };
 
 const Base = ({ addBase, pizza }) => {
@@ -45,13 +57,7 @@ const Base = ({ addBase, pizza }) => {
       {pizza.base && (
         <motion.div className="next" variants={buttonVariants}>
           <Link to="/toppings">
-            <motion.button
-              whileHover={{
-                scale: 1.1,
-                textShadow: "0px 0px 8px rgb(255,255,255)",
-                boxShadow: "0px 0px 8px rgb(255,255,255)",
-              }}
-            >
+            <motion.button variants={buttonVariants} whileHover="hover">
               Next
             </motion.button>
           </Link>
