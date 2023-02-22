@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { buttonVariants, containerVariants } from "./Base";
+import { buttonVariants } from "./Base";
+import { containerVariants } from "./Home";
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
@@ -19,6 +20,7 @@ const Toppings = ({ addTopping, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>

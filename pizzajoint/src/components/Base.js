@@ -1,11 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { containerVariants } from "./Home";
 
-export const containerVariants = {
-  hidden: { x: "100vw", opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { delay: 0.5 } },
-};
 export const buttonVariants = {
   hidden: { x: "-100vw", opacity: 0 },
   visible: {
@@ -32,6 +29,7 @@ const Base = ({ addBase, pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
